@@ -1,5 +1,4 @@
 body {
-    background-image: url("../Pictures/Bg's/trendingBg.jpg");
     background-size: cover;
-    background: no-repeat;
+    background: url("../Pictures/Bg's/trendingBg.jpg") no-repeat;
 }

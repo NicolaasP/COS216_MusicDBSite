@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link href="../CSS/navBar.css" rel="Stylesheet"/>
+    <link href="../CSS/calendar.css" rel="Stylesheet"/>
+    <script src="../JavaScript/load.js"></script>
+    <script src="../JavaScript/cal.js"></script>
+    <script src="https://kit.fontawesome.com/5cc0069289.js" crossorigin="anonymous"></script>
+    
+</head>
+<body onload="displayC()">
+    <div class="nBar">
+        <a href="index.html"><i class="fas fa-home"></i> Home Page</a>
+        <a href="trending.html"><i class="fas fa-fire-alt"></i> Trending Page</a>
+        <a href="nRel.html"><i class="far fa-clock"></i> New Release</a>
+        <a href="tpRate.html"><i class="fas fa-stream"></i> Top Rated</a>
+        <a href="feat.html"><i class="fas fa-play"></i> Featured</a>
+        <a href="tour.html"><i class="fas fa-hammer"></i> Tour</a>
+        <a class="active" href="calendar.html"><i class="fas fa-calendar"></i> Calendar</a>
+    </div>
+    <div id='cal'>
+
+    </div>
+    <div>
+        <input type='button' value='prev' onclick="prev()"/>
+        <input type="button" value="next" onclick="next()"/>
+    </div>
+</body>
+</html>

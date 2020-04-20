@@ -1,63 +1,50 @@
-<!--Nicolaas Ivan Pretorius u19021306 -->
 <!DOCTYPE html>
 <head>
-    <title>Trending</title>
-    <link href="../CSS/navBar.css" rel="stylesheet"/>
+    <script src="../JavaScript/deezer.js"></script>
+    <script src="../JavaScript/load.js"></script>
     <link href="../CSS/trending.css" rel="stylesheet"/>
+    <link href="../CSS/navBar.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/5cc0069289.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Trending</title>
 </head>
-<body>
+<body onload='deezerTrending(), deezerKeyList()'>
     <div class="nBar">
-        <a href="index.html"><i class="fas fa-home"></i>Home Page</a>
-        <a class="active" href="trending.html"><i class="fas fa-fire-alt"></i>Trending Page</a>
-        <a href="nRel.html"><i class="far fa-clock"></i>New Release</a>
-        <a href="tpRate.html"><i class="fas fa-stream"></i>Top Rated</a>
+        <a href="index.html"><i class="fas fa-home"></i> Home Page</a>
+        <a class="active" href="trending.html"><i class="fas fa-fire-alt"></i> Trending Page</a>
+        <a href="nRel.html"><i class="far fa-clock"></i> New Release</a>
+        <a href="tpRate.html"><i class="fas fa-stream"></i> Top Rated</a>
         <a href="feat.html"><i class="fas fa-play"></i> Featured</a>
+        <a href="tour.html"><i class="fas fa-hammer"></i> Tour</a>
+        <a href="calendar.html"><i class="fas fa-calendar"></i> Calendar</a>
+    </div>
+    <div class="search">
+        <input type="text" id="text" placeholder="Search"/>
+        <input type="button" value="Search" onclick="deezerSearch()" id="btn"/>
+        <label for="numRes">Showing: </label>
+        <input type="number" value="25" id="numRes" onchange="deezerRefresh()"/>
+        <label for="filter">Filter by: </label>
+        <select id="filter" onchange="deezerRefresh()">
+            <option value="search">All</option>
+            <option value="track">Songs</option>
+            <option value="artist">Artist</option>
+            <option value="album">Album</option>
+        </select>
+
+    </div>
+    <div class="container" id="container">
+        <div class="wrapper">
+            <ul class="stage clearfix" id="list">
+                
+            </ul>
+        </div><!-- /wrapper -->
+    </div>
+    <div id="lScreen">
+
     </div>
     <div>
-        <form>
-            <input type="text" placeholder="Search song title..." name="srch" align="center">
-            <button type="submit" class="search"><i class="fa fa-search"/></button>
-            <button type="button" class="filter1"><i class="fas fa-filter"/> Most liked</button>
-            <button type="button" class="filter2"><i class="fas fa-filter"/> least liked</button>
-        </form>
+        <input type="button" onclick="deezerPrev()" value="prev" id='prv'/>
+        <input type="button" onclick="deezerNext()" value="next" id='nxt' class="next"/>
     </div>
-
-    <div class="last">
-        <img src="../Pictures/songIcons/Itdwyld.jpg">
-        <p class="lT">Nickelback - If today was your last day</p>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="last">
-        <img src="../Pictures/songIcons/220px-Nickelgraph.jpg">
-        <p class="lT">Nickelback - Photograph</p>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="last">
-        <img src="../Pictures/songIcons/maxresdefault.jpg">
-        <p class="lT">Nickelback - Coin for the ferryman</p>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="last">
-        <img src="../Pictures/songIcons/nickelback-all-the-right-reasons-w-dvd-spec-49116.jpg">
-        <p class="lT">Nickelback - Rockstar</p>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="last">
-        <img src="../Pictures/songIcons/This_afternoon.jpg">
-        <p class="lT">Nickelback - This afternoon</p>
-    </div>
+    <style id="css">
+    </style>
 </body>

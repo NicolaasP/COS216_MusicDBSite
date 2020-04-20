@@ -7,7 +7,8 @@ body {
 
 .kS{
     background: none;
-    color: black;
+    color: white;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     text-align: center;
     border-radius: 8px;
     border: none;
@@ -29,4 +30,18 @@ img{
     border: none;
     border-radius: 8px;
     text-align: center;
+}
+
+#c {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    background-color: blue;
+}
+
+#a {
+    position: absolute;
+    background-color: red;
 }

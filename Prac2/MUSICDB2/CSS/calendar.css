@@ -1,0 +1,21 @@
+td {
+    padding: 50px;
+    border: 2px solid black;
+    margin: 0;
+}
+
+table{
+    position: absolute;
+    left: auto;
+    right: auto;
+    border: 4px solid black;
+}
+
+#cal{
+    height: 655px;
+}
+
+#today{
+    border-color: green;
+    background-color: lightgreen;
+}

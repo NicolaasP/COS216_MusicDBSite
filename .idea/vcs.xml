@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/MusicWeb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/COS216" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/COS216/MUSICDB" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/COS216_Prac2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/COS216_Prac2/MUSICDB" vcs="Git" />
   </component>
 </project>

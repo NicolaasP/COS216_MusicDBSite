@@ -1,19 +1,15 @@
-/*Nicolaas Ivan Pretorius u19021306*/
-body {
-    background: #707070 url("../Pictures/Bg's/indexBG.jpg") no-repeat;
-    background-size: cover;
-    font-family: 'Open Sans';
+body{
+    background-color: black;
 }
 
-.heading{
-    color: #f0f0f0;
-}
-
-.center{
+.tourText{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50vmax;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+    color: white;
 }
 
 #c {

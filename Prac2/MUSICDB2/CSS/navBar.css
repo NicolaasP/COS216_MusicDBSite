@@ -14,9 +14,9 @@
 }
 
 .nBar a:hover {
-    background-color: orange;
+    background-color: #8C75D1;
 }
 
 .nBar a.active {
-    background-color: darkorange;
+    background-color: indigo;
 }

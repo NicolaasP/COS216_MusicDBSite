@@ -73,6 +73,7 @@ option {
     left: 50%;
     right: 50%;
     background-color: blue;
+    z-index: 1001;
 }
 
 #a {
@@ -95,6 +96,14 @@ input[type=text] {
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+    z-index: 1000;
 }
 
 #nxt {

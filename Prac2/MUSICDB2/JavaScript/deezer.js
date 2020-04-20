@@ -1,9 +1,12 @@
 let appe = "https://cors-anywhere.herokuapp.com/";
+let ids = [];
+let relDates = [];
 let prev = '';
 let cMode = '';
 let pMode = '';
 let nex = '';
 let pres = '';
+let tMonth = 0;
 function deezerGet(url, mode){
     if(url == undefined) return;
     load();
@@ -26,10 +29,16 @@ function deezerGet(url, mode){
             if(json.total != 0){
                 if(mode === 'search' || mode == null || mode === 'track'){
                     for(i in json.data){
+                        ids.push(json.data[i].album.id);
                         let n = parseInt(i) + 1;
                         let mins = parseInt(json.data[i].duration / 60);
                         html += '<li class="scene">\n<div class="song" onclick="return true">\n<div class="poster"></div>\n<div class="info">\n<header>\n<h1>' + json.data[i].title + '</h1>\n<span class="duration">' + mins + ' minutes</span>\n</header>\n<p class="para">\n<b>Artist:</b> ' + json.data[i].artist.name + '<br>\n<b>Album:</b> ' + json.data[i].album.title +'<br>\n<a href="' + json.data[i].link + '">Play on Deezer</a><br>\n</p>\n</div>\n</div>\n</li>\n';
                         css += '.scene:nth-child(' + n + ') .poster {\nbackground-image: url(' + json.data[i].album.cover + ');\nbackground-size:contain;\nbackground-color: #333333;\n}\n\n.scene:nth-child(' + n + ') .info header {\nbackground-image: url(' + json.data[i].album.cover + ');\nbackground-color: #333333;\nbackground-size: cover;\ncolor: white;\ntext-shadow: 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000\n}\n\n.scene:nth-child(' + n + ') .info {\nbackground-color: #333333;\nborder: #333333;\n}\n\n.scene:nth-child(' + n + ') .para {\ncolor: white;\n}';
+                    }
+                    try{
+                        updateDates();
+                    }catch{
+                        console.log("not def");
                     }
                 }else if(mode === 'album'){
                     for(i in json.data){
@@ -56,12 +65,22 @@ function deezerGet(url, mode){
                         html += '<div class="kS">\n<img src="' + json.tracks.data[i].album.cover + '">\n<p class="kST"><b>' + json.tracks.data[i].title + '</b>, ' + json.tracks.data[i].artist.name + '</p>\n</div>\n';
                     }
                     console.log(json)
+                }else if(mode === 'cal'){
+                    let fDate = json.release_date;
+                    let d = new Date(fDate.substr(0, 4), fDate.substr(5, 2), fDate.substr(8));
+                    let a = d.getDate();
+                    let m = d.getMonth();
+                    m--;
+                    let y = d.getFullYear();
+                    console.log(a + '' + m + '' + y);
+                    let tDate = a + '' + m + '' + y;
+                    dateWriter(tDate, json.title);
                 }
                 if(json.next != null && json.next != undefined) nex = json.next;
                 if(json.prev != null && json.prev != undefined) prev = json.prev;
                 loadFin();
-                list.innerHTML = html;
-                style.innerHTML = css;
+                if(list != null && list != undefined)list.innerHTML = html;
+                if(style != null && style != undefined)style.innerHTML = css;
             }else{
                 let container = document.getElementById("list");
                 container.innerHTML = "<h1 class='noRes'>No Results found!</h1>"
@@ -84,6 +103,16 @@ function deezerRefresh(){
         if(numRes != pres || filt != cMode){
             deezerSearch();
         }
+    }
+}
+
+function deezerGetRelDates(month){
+    tMonth = month;
+    for(id in ids){
+        load();
+        console.log(ids[id]);
+        url = 'https://api.deezer.com/album/'+ids[id];
+        deezerGet(url, 'cal');
     }
 }
 

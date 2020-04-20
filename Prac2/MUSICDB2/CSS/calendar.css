@@ -1,7 +1,10 @@
 td {
-    padding: 50px;
+    height: 115px;
+    width: 115px;
+    vertical-align: top;
     border: 2px solid black;
     margin: 0;
+    
 }
 
 table{
@@ -15,7 +18,30 @@ table{
     height: 655px;
 }
 
-#today{
+.today{
     border-color: green;
     background-color: lightgreen;
+}
+
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+    z-index: 1000;
+}
+
+#c {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    background-color: blue;
+    z-index: 1001;
+}
+
+#a {
+    position: absolute;
+    background-color: red;
 }

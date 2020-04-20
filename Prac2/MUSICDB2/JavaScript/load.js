@@ -1,11 +1,36 @@
+let html = '';
 function load(){
-    let ls = document.getElementById('lScreen');
-    if(ls == null || ls == undefined) return;
-    ls.innerHTML = '<div id="c"><div id="a"></div></div>';
-    myMove();
+  let bod = document.getElementById('bod');
+  if(bod != null && bod != undefined){
+    html = bod.innerHTML;
+    bod.innerHTML = '<div id="lScreen"></div>';
+  }
+  let cov = document.getElementById('cover');
+  if(cov != null && cov != undefined){
+    cov.style.width = "5000px";
+    cov.style.height = "5000px";
+    cov.style.top = "0";
+    cov.style.left = "0";
+  }
+  let ls = document.getElementById('lScreen');
+  if(ls == null || ls == undefined) return;
+  ls.innerHTML = '<div id="c"><div id="a"></div></div>';
+  myMove();
 }
 
 function loadFin(){
+  let bod = document.getElementById('bod');
+  if(bod != null && bod != undefined){
+    bod.innerHTML = html;
+  }
+  let cov = document.getElementById('cover');
+  if(cov != null && cov != undefined){
+    cov.style.width = "0";
+    cov.style.height = "0";
+    cov.style.top = "0";
+    cov.style.left = "0";
+  }
+
     let ls = document.getElementById('lScreen');
     if(ls == null || ls == undefined) return;
     ls.innerHTML = '';

@@ -6,6 +6,7 @@
     <link href="../CSS/navBar.css" rel="Stylesheet"/>
     <link href="../CSS/calendar.css" rel="Stylesheet"/>
     <script src="../JavaScript/load.js"></script>
+    <script src="../JavaScript/deezer.js"></script>
     <script src="../JavaScript/cal.js"></script>
     <script src="https://kit.fontawesome.com/5cc0069289.js" crossorigin="anonymous"></script>
     
@@ -23,8 +24,11 @@
     <div id='cal'>
 
     </div>
+    <div id='lScreen'></div>
+    <div id='cover'></div>
     <div>
-        <input type='button' value='prev' onclick="prev()"/>
+        <input type='button' value='prev' onclick="back()"/>
+        <input type="button" value='current' onclick="displayC()"/>
         <input type="button" value="next" onclick="next()"/>
     </div>
 </body>

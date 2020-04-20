@@ -23,9 +23,18 @@ body {
     left: 50%;
     right: 50%;
     background-color: blue;
+    z-index: 1001;
 }
 
 #a {
     position: absolute;
     background-color: red;
+}
+
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+    z-index: 1000;
 }

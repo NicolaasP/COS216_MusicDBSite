@@ -1,13 +1,13 @@
 /*Nicolaas Ivan Pretorius u19021306*/
 body {
-    background: black url("../Pictures/Bg's/tpRateBg.jpg") no-repeat;
+    background: black url("../Pictures/Bg's/feat.jpg") no-repeat;
     background-size: cover;
     font-family: "Open Sans";
 }
 
 .kS{
     background: none;
-    color: black;
+    color: white;
     text-align: center;
     border-radius: 8px;
     border: none;

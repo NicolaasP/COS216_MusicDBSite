@@ -28,9 +28,9 @@ function genMonth(month, year){
     for(let i = 0; i < j; i++){
         html += '<tr>\n';
         for(let h = 0; h < 7; h++, tot++){
-            if(tot > days) break;
-            if(d === tot && m === month && y === year) html += '<td class="today" onclick="findDate()" id="' + tot + dMonth + dYear + '">' + tot + '</td>\n'
-            else html += '<td onclick="findDate()" id="' + tot  + dMonth + dYear + '">' + tot + '</td>\n';
+            if (tot > days) break;
+            if (d === tot && m === month && y === year) html += '<td class="today" id="' + tot + dMonth + dYear + '">' + tot + '</td>\n'
+            else html += '<td id="' + tot + dMonth + dYear + '">' + tot + '</td>\n';
         }
         html += '</tr>\n';
     }
@@ -39,14 +39,28 @@ function genMonth(month, year){
     return html;
 }
 
-function dateWriter(id, text){
+function genToday() {
+    let today = new Date();
+    let d = today.getDate();
+    let m = today.getMonth();
+    let y = today.getFullYear();
+    let html = '<table><tr><td class="today" id = ' + d + '' + m + '' + y + '>' + d + '</td></tr></table>';
+    let div = document.getElementById('cal');
+    if (div == null || div == undefined) {
+        alert("div not found");
+        return;
+    }
+    div.innerHTML = html;
+}
+
+function dateWriter(id, text) {
     let day = document.getElementById(id);
     console.log(123);
-    if(day == null || day == undefined) {
+    if (day == null || day == undefined) {
         return;
     }
     console.log(321);
-    if(!day.innerHTML.includes(text)) day.innerHTML += '<br>' + text;
+    if (!day.innerHTML.includes(text)) day.innerHTML += '<br>' + text;
 }
 
 

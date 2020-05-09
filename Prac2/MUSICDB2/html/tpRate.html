@@ -3,27 +3,34 @@
 <head>
     <title>Top Rated</title>
     <link href="../CSS/navBar.css" rel="stylesheet"/>
-    <link href="../CSS/tpRate.css" rel="stylesheet"/>
+    <link href="../CSS/boxes.css" rel="stylesheet"/>
     <script src="../JavaScript/deezer.js"></script>
+    <link href="../Pictures/Favicon.png" rel="shortcut icon" type="image/png"/>
     <script src='../JavaScript/load.js'></script>
     <script src="https://kit.fontawesome.com/5cc0069289.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body onload="deezerRate()">
-    <div class="nBar">
-        <a href="index.html"><i class="fas fa-home"></i> Home Page</a>
-        <a href="trending.html"><i class="fas fa-fire-alt"></i> Trending Page</a>
-        <a href="nRel.html"><i class="far fa-clock"></i> New Release</a>
-        <a class="active" href="tpRate.html"><i class="fas fa-stream"></i> Top Rated</a>
-        <a href="feat.html"><i class="fas fa-play"></i> Featured</a>
-        <a href="tour.html"><i class="fas fa-hammer"></i> Tour</a>
-        <a href="calendar.html"><i class="fas fa-calendar"></i> Calendar</a>
+<div class="nBar">
+    <a href="index.html"><i class="fas fa-home"></i> Home Page</a>
+    <a href="trending.html"><i class="fas fa-fire-alt"></i> Trending Page</a>
+    <a href="nRel.html"><i class="far fa-clock"></i> New Release</a>
+    <a class="active" href="tpRate.html"><i class="fas fa-stream"></i> Top Rated</a>
+    <a href="feat.html"><i class="fas fa-play"></i> Featured</a>
+    <a href="tour.html"><i class="fas fa-hammer"></i> Tour</a>
+    <a href="calendar.html"><i class="fas fa-calendar"></i> Calendar</a>
+</div>
+
+<div class="container" id="container">
+    <div class="wrapper">
+        <ul class="stage clearfix" id="list">
+
+        </ul>
     </div>
+</div>
 
-    <div id='list'></div>
+<div id="lScreen"></div>
+<div id='cover'></div>
 
-    <div id="lScreen"></div>
-    <div id='cover'></div>
-
-    <style id='css'></style>
+<style id='css'></style>
 </body>

@@ -45,3 +45,13 @@ table{
     position: absolute;
     background-color: red;
 }
+
+#year {
+    float: left;
+    border: none;
+}
+
+.mon {
+    width: 850px;
+    border: none;
+}

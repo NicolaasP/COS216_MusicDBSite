@@ -6,5 +6,7 @@
     <mapping directory="$PROJECT_DIR$/COS216/MUSICDB" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/COS216_Prac2" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/COS216_Prac2/MUSICDB" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Prac1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Prac1/MUSICDB" vcs="Git" />
   </component>
 </project>

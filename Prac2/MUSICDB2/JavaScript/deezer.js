@@ -55,14 +55,18 @@ function deezerGet(url, mode){
                     console.log(json);
                 }else if(mode === 'rate'){
                     for(i in json.data){
-                        html += '<div class="kS">\n<img src="' + json.data[i].cover + '">\n<p class="kST">' + json.data[i].title + ',  ' + json.data[i].artist.name + ', ' + json.data[i].position + '</p>\n</div>\n';
+                        let n = parseInt(i) + 1;
+                        html += '<li class="scene">\n<div class="song" onclick="return true">\n<div class="poster"></div>\n<div class="info">\n<header>\n<h1>' + json.data[i].title + '</h1>\n<span class="duration">Artist' + json.data[i].artist.name + '</span>\n</header>\n<p class="para">\n<b>Rank:</b> ' + json.data[i].position + '<br>\n<a href="' + json.data[i].link + '">Deezer link</a>\n</p>\n</div>\n</div>\n</li>\n';
+                        css += '.scene:nth-child(' + n + ') .poster {\nbackground-image: url(' + json.data[i].cover + ');\nbackground-size:contain;\nbackground-color: #333333;\n}\n\n.scene:nth-child(' + n + ') .info header {\nbackground-image: url(' + json.data[i].cover + ');\nbackground-color: #333333;\nbackground-size: cover;\ncolor: white;\ntext-shadow: 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000\n}\n\n.scene:nth-child(' + n + ') .info {\nbackground-color: #333333;\nborder: #333333;\n}\n\n.scene:nth-child(' + n + ') .para {\ncolor: white;\n}';
                     }
                     console.log(json);
                 }else if(mode === 'playlist'){
-                    for(i in json.tracks.data){
+                    for(i in json.tracks.data) {
                         i = parseInt(i);
+                        let n = i + 1;
                         console.log(i);
-                        html += '<div class="kS">\n<img src="' + json.tracks.data[i].album.cover + '">\n<p class="kST"><b>' + json.tracks.data[i].title + '</b>, ' + json.tracks.data[i].artist.name + '</p>\n</div>\n';
+                        html += '<li class="scene">\n<div class="song" onclick="return true">\n<div class="poster"></div>\n<div class="info">\n<header>\n<h1>' + json.tracks.data[i].title + '</h1>\n<span class="duration">Artist' + json.tracks.data[i].artist.name + '</span>\n</header>\n<p class="para">\n<br>\n\n</p>\n</div>\n</div>\n</li>\n';
+                        css += '.scene:nth-child(' + n + ') .poster {\nbackground-image: url(' + json.tracks.data[i].album.cover + ');\nbackground-size:contain;\nbackground-color: #333333;\n}\n\n.scene:nth-child(' + n + ') .info header {\nbackground-image: url(' + json.tracks.data[i].album.cover + ');\nbackground-color: #333333;\nbackground-size: cover;\ncolor: white;\ntext-shadow: 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000, 0 0 1px #000000\n}\n\n.scene:nth-child(' + n + ') .info {\nbackground-color: #333333;\nborder: #333333;\n}\n\n.scene:nth-child(' + n + ') .para {\ncolor: white;\n}';
                     }
                     console.log(json)
                 }else if(mode === 'cal'){
@@ -84,11 +88,14 @@ function deezerGet(url, mode){
             }else{
                 let container = document.getElementById("list");
                 container.innerHTML = "<h1 class='noRes'>No Results found!</h1>"
+                loadFin();
             }
         }else if(req.status === 429){
             let container = document.getElementById("list");
             container.innerHTML = "<h1 class='noRes'>Too many requests made wait a while before retrying</h1>"
+
         }else console.log(req.status);
+        loadFin();
     }
 
     req.open('GET', appe + url);
